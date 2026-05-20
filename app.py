@@ -203,7 +203,7 @@ else:
         st.session_state['full_name'] = None
         st.rerun()
 
-    st.title("📊 Production Log Workspace")
+    st.title("📊Midwest Production Log")
 
     conn = sqlite3.connect(DB_FILE)
     raw_df = pd.read_sql_query("SELECT id, date, emp_id, emp_name, role, work_type, production_val FROM production ORDER BY id ASC", conn)
@@ -241,7 +241,7 @@ else:
         selected_date = st.date_input("Processing Date", datetime.today())
         selected_role = st.selectbox("Assigned Workflow Role", ROLES)
         selected_work_type = st.selectbox("Type of Work Completed", WORK_TYPES)
-        production_value = st.number_input("Production Unit Output Count", min_value=0.0, step=1.0)
+        production_value = st.number_input("Production Count", min_value=0.0, step=1.0)
         submit_data = st.form_submit_button("SUBMIT DATA")
         
     if submit_data:
