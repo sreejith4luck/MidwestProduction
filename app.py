@@ -158,7 +158,7 @@ elif st.session_state['recovery_mode']:
 
 # 4. Login Screen
 elif not st.session_state['logged_in']:
-    st.title("🔐 Production Portal Sign In")
+    st.title("🔐 Midwest Production Log")
     with st.form("login_form"):
         input_user = st.text_input("Username").strip().lower()
         input_pass = st.text_input("Password", type="password")
